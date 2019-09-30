@@ -2,22 +2,27 @@
 
 [![License](https://img.shields.io/crates/l/rustc-serialize.svg)](https://raw.githubusercontent.com/ShanQincheng/jmuSupplicant/master/LICENSE)
 
-这是一个适用于集美大学的第三方锐捷认证客户端。关于实现此客户端的实现过程，可以参考[锐捷认证过程分析与第三方锐捷认证客户端的设计与实现](https://github.com/ShanQincheng/jmuSupplicant/blob/master/doc/%E9%94%90%E6%8D%B7%E8%AE%A4%E8%AF%81%E8%BF%87%E7%A8%8B%E5%88%86%E6%9E%90%E4%B8%8E%E7%AC%AC%E4%B8%89%E6%96%B9%E9%94%90%E6%8D%B7%E8%AE%A4%E8%AF%81%E5%AE%A2%E6%88%B7%E7%AB%AF%E7%9A%84%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%AE%9E%E7%8E%B0.pdf)
+- 本项目基于jmuSupplicant修改完成，适用于常熟理工学院校园网认证。
+- 感谢原作者提供源代码
+- 很遗憾没能实现11点后断网认证。
+- padavan固件下使用不是很稳定，尽量使用op。
 
-除了实现基础的认证并保持在线功能以外，额外实现了夜晚断网后认证功能。
+# 编译（以Unbuntu 18.04LTS为例）
 
-普通认证支持所有服务类型的选择，夜晚断网后认证服务类型仅支持“教育网接入”。
+## 安装所需依赖
 
-经测试，12:00 p.m.后网速有较大提升，爱奇艺 1080P 勉强能够，抖音，微博毫无压力。
+> ```bash
+> build-essential bison flex zlib1g-dev libncurses5-dev subversion quilt intltool ruby fastjar unzip gawk autogen autopoint
+> ```
 
-# 编译
+## 安装libpcap库和cmake工具
+
+- 自行安装
 
 ## 普通编译
 
-首先请确保系统已安装 ```libpcap``` 库以及 ```CMake``` 。
-
 ```bash
-git clone https://github.com/ShanQincheng/jmuSupplicant.git
+git clone https://github.com/MiChuancey/jmuSupplicant.git
 cd jmuSupplicant
 mkdir build
 cd build
@@ -80,7 +85,7 @@ cp -r pcap /home/xxx/openwrt-sdk-18.06.0-ar71xx-generic_gcc-7.3.0_musl.Linux-x86
 ### 交叉编译 jmuSupplicant
 
 ```bash
-git clone https://github.com/ShanQincheng/jmuSupplicant.git
+git clone https://github.com/MiChuancey/jmuSupplicant.git
 cd jmuSupplicant
 mkdir build
 cd build
@@ -99,19 +104,7 @@ make
 - 使用以下指令进行锐捷认证：
 
   ```bash
-  sudo ./jmu -u学号 -p密码 -s0(教育网接入)1(联通宽带接入)2(移动宽带接入)3(电信宽带接入) -b
-  ```
-
-- 程序输出锐捷认证信息，或显示 login success， 则认证成功。
-
-## 断网后的使用
-
-- 首先自行找寻办公区域（夜晚能认证锐捷的地方，比如办公大楼）的 IP 地址，例如：123.123.123.123
-
-- 使用以下指令进行断网后的锐捷认证：
-
-  ```bash
-  sudo ./jmuSupplicant.out -u学号 -p密码 -s0 -b -n --ip 123.123.123.123
+  sudo ./jmu -u 学号 -p 密码 -s0(教育网接入)1(联通宽带接入)2(移动宽带接入)3(电信宽带接入) -b
   ```
 
 - 程序输出锐捷认证信息，或显示 login success， 则认证成功。
@@ -119,13 +112,10 @@ make
 # 已测试稳定运行的设备
 
 - 计算机：
-  - Ubuntu 17.10
-  - Archlinux 4.17.8-1-ARCH
+  - Ubuntu 18.04
 - 路由器：
+  - MT7621
   - MT7620
-  - ar71xx
-- 其他：
-  - 树莓派 2B
 
 # License
 
