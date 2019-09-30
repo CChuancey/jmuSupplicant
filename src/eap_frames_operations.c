@@ -22,9 +22,9 @@
 
 #include "eap_frames_operations.h"
 
-uint8_t eapol_start[1000];  // eapol start frame
-uint8_t eap_response_identity[1000]; 
-uint8_t eap_response_md5_challenge[1000];  
+uint8_t eapol_start[524];  // eapol start frame
+uint8_t eap_response_identity[538];
+uint8_t eap_response_md5_challenge[571];
 uint8_t eapol_heartbeat[45];
 pcap_t *descr = NULL;// PCAP packet capture descriptor for the specified interface.
 SEND_FRAME_TYPE current_state;
@@ -236,7 +236,7 @@ int send_eap_frame(SEND_FRAME_TYPE type, const uint8_t *frame)
 //    ethernet_header = (struct ether_header*)(frame); // extract ethernet header values
     construct_eapol_start_frame(frame);
     send_eap_frame_data = eapol_start;
-    send_eap_frame_data_length = 1000;
+    send_eap_frame_data_length = 524;
 
     fprintf(stdout, "sending eapol start frame\n");
     break;
@@ -247,7 +247,7 @@ int send_eap_frame(SEND_FRAME_TYPE type, const uint8_t *frame)
 //    eap_id = frame[EAP_ID_ADDRESS];
     construct_eap_response_identity_frame(frame);
     send_eap_frame_data = eap_response_identity;
-    send_eap_frame_data_length = 1000;
+    send_eap_frame_data_length = 538;
 
     fprintf(stdout, "sending eap_response_identity frame\n");
     break;
@@ -262,7 +262,7 @@ int send_eap_frame(SEND_FRAME_TYPE type, const uint8_t *frame)
 //    construct_eap_response_md5_challenge_frame(ethernet_header->ether_shost, eap_request_md5_value, eap_md5_value_size, frame);
     construct_eap_response_md5_challenge_frame(frame);
     send_eap_frame_data = eap_response_md5_challenge;
-    send_eap_frame_data_length = 1000;
+    send_eap_frame_data_length = 571;
 
     fprintf(stdout, "sending eap_md5_challenge frame\n");
     break;

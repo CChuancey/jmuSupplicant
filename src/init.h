@@ -38,15 +38,15 @@ typedef struct nic_struct {
   struct in_addr dns;
 } NIC_STRUCT;
 
-const static uint8_t SERVICE_EDUCATION[] = {0xbd, 0xcc, 0xd3, 0xfd, 0xcd, 0xf8, 0xbd, 0xd3, 0xc8, 0xeb}; //教育网接入
-const static uint8_t SERVICE_CHINA_UNICOM[] = {0xc1, 0xaa, 0xcd, 0xa8, 0xbf, 0xed, 0xb4, 0xf8, 0xbd, 0xd3, 0xc8, 0xeb}; // 联通宽带接入
-const static uint8_t SERVICE_CHINA_MOBILE[] = {0xd2, 0xc6, 0xb6, 0xaf, 0xbf, 0xed, 0xb4, 0xf8, 0xbd, 0xd3, 0xc8, 0xeb}; // 移动宽带接入
-const static uint8_t SERVICE_CHINA_TELECOM[] = {0xb5, 0xe7, 0xd0, 0xc5, 0xbf, 0xed, 0xb4, 0xf8, 0xbd, 0xd3, 0xc8, 0xeb}; // 电信宽带接入
+const static uint8_t SERVICE_EDUCATION[] = {0x22,0xd0,0xa3,0xd4,0xb0,0xcd,0xcd}; //教育网接入
+const static uint8_t SERVICE_CHINA_UNICOM[] = {0xc1, 0xaa, 0xcd, 0xa8}; // 联通宽带接入
+const static uint8_t SERVICE_CHINA_MOBILE[] = {0xd2, 0xc6, 0xb6, 0xaf, 0xbf}; // 移动宽带接入
+const static uint8_t SERVICE_CHINA_TELECOM[] = {0xb5, 0xe7, 0xd0, 0xc5, 0xbf}; // 电信宽带接入
 
-const static unsigned int SERVICE_EDUCATION_LENGTH = 10; // bytes number
-const static unsigned int SERVICE_CHINA_UNICOM_LENGTH = 12;
-const static unsigned int SERVICE_CHINA_MOBILE_LENGTH = 12;
-const static unsigned int SERVICE_CHINA_TELECOM_LENGTH = 12;
+const static unsigned int SERVICE_EDUCATION_LENGTH = 6; // bytes number
+const static unsigned int SERVICE_CHINA_UNICOM_LENGTH = 4;
+const static unsigned int SERVICE_CHINA_MOBILE_LENGTH = 4;
+const static unsigned int SERVICE_CHINA_TELECOM_LENGTH = 4;
 
 const static unsigned int DEFAULT_SERVICE_NAME_SIZE = 32;
 const static char *DEFAULT_DHCPSCRIPT = "dhclient";

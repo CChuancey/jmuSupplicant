@@ -27,33 +27,33 @@ const static unsigned int ETHERNET_TRAILER_LENGTH = 507;
 const static unsigned int EAPOL_START_IP_ADDR = 0X17;
 const static unsigned int EAPOL_START_NETMASK_ADDR = 0X1B;
 const static unsigned int EAPOL_START_GATEWAY_ADDR = 0X1F;
-const static unsigned int EAPOL_START_SERVICE_NAME_ADDR = 0x193;
+const static unsigned int EAPOL_START_SERVICE_NAME_ADDR = 0x163;
 
 // EAP RESPONSE IDENTITY FRAME
 const static unsigned int EAP_HEADER_LENGTH = 4;
 const static unsigned int EAP_TYPE_LENGTH = 1;
-const static unsigned int EAP_IDENTITY_PADDING_LENGTH = 25;
-const static unsigned int EAP_IDENTITY_TRAILER_LENGTH = 524;
-const static unsigned int EAP_IDENTITY_RESPONSE_SERVICE_NAME_ADDR = 0x1a4;
-const static unsigned int EAP_IDENTITY_RESPONSE_IP_ADDR = 0x28;
-const static unsigned int EAP_IDENTITY_RESPONSE_NETMASK_ADDR = 0X2c;
-const static unsigned int EAP_IDENTITY_RESPONSE_GATEWAY_ADDR = 0X30;
+const static unsigned int EAP_IDENTITY_PADDING_LENGTH = 28;
+const static unsigned int EAP_IDENTITY_TRAILER_LENGTH = 478;
+const static unsigned int EAP_IDENTITY_RESPONSE_SERVICE_NAME_ADDR = 0x171;
+const static unsigned int EAP_IDENTITY_RESPONSE_IP_ADDR = 0x25;
+const static unsigned int EAP_IDENTITY_RESPONSE_NETMASK_ADDR = 0X29;
+const static unsigned int EAP_IDENTITY_RESPONSE_GATEWAY_ADDR = 0X2d;
 
 const static unsigned int EAP_ID_ADDRESS_IN_EAP_IDENTITY_REQUEST_FRAME = 0X13;
 
 // EAP RESPONSE MD5 CHALLENGE FRAME
 const static unsigned int EAP_MD5_VALUE_SIZE_LENGTH = 1;
 const static unsigned int EAP_MD5_VALUE_LENGTH = 16;
-const static unsigned int EAP_MD5_CHALLENGE_PADDING_LENGTH = 8;
-const static unsigned int EAP_MD5_CHALLENGE_TRAILER_LENGTH = 545;
+const static unsigned int EAP_MD5_CHALLENGE_PADDING_LENGTH = 11;
+const static unsigned int EAP_MD5_CHALLENGE_TRAILER_LENGTH = 511;
 const static unsigned int SERVICE_NAME_LENGTH = 32;
 
-const static unsigned int EAP_MD5_RESPONSE_IP_ADDR = 0X39;
-const static unsigned int EAP_MD5_RESPONSE_NETMASK_ADDR = 0X3D;
-const static unsigned int EAP_MD5_RESPONSE_GATEWAY_ADDR = 0X41;
-const static unsigned int EAP_MD5_RESPONSE_COMPUTE_PASSWORD_ADDR = 0XB8;
-const static unsigned int EAP_MD5_RESPONSE_COMPUTE_V4_ADDR = 0X121;
-const static unsigned int EAP_MD5_RESPONSE_SERVICE_NAME_ADDR = 0X1B5;
+const static unsigned int EAP_MD5_RESPONSE_IP_ADDR = 0X36;
+const static unsigned int EAP_MD5_RESPONSE_NETMASK_ADDR = 0X3a;
+const static unsigned int EAP_MD5_RESPONSE_GATEWAY_ADDR = 0X3e;
+const static unsigned int EAP_MD5_RESPONSE_COMPUTE_PASSWORD_ADDR = 0X99;
+const static unsigned int EAP_MD5_RESPONSE_COMPUTE_V4_ADDR = 0X10a;
+const static unsigned int EAP_MD5_RESPONSE_SERVICE_NAME_ADDR = 0X192;
 
 const static unsigned int EAP_ID_ADDRESS_IN_EAP_MD5_REQUEST_FRAME = 0X13;
 const static unsigned int EAP_MD5_VALUE_SIZE_ADDRESS_IN_EAP_MD5_REQUEST_FRAME = 0X17;
