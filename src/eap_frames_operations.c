@@ -295,7 +295,7 @@ int send_eap_frame(SEND_FRAME_TYPE type, const uint8_t *frame)
 
   // open a pcap packet capture descriptor for the specified interface.
   char pcap_errbuf[PCAP_ERRBUF_SIZE];
-  pcap_t* descr = pcap_open_live(nic_info.nic_name, SNAP_LENGTH, 1, 1000,  pcap_errbuf);
+  pcap_t* descr = pcap_open_live(nic_info.nic_name, SNAP_LENGTH, 0, 1000,  pcap_errbuf);
   if(descr == NULL) {
     fprintf(stderr, "%s", pcap_errbuf);
   }
