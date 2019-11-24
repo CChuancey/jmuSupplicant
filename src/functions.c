@@ -377,15 +377,17 @@ void HandleSigalrm(int sig, siginfo_t *siginfo, void *context)
 void KeepOnline()
 {
   extern SEND_FRAME_TYPE current_state;
- 
+  static int control_log_times=0;
   if(current_state == ONLINE)
   {
     // Logs here
+    send_eap_frame(ONLINE, NULL);
+    if(control_log_times) return;
+    control_log_times++;
     openlog(NULL, LOG_PID|LOG_CONS, LOG_USER);
     syslog(LOG_INFO, "Send an eapol heartbeat frame...");
     closelog();
 
-    send_eap_frame(ONLINE, NULL);
   }else exit(1);
 
   return;
